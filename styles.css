@@ -1,0 +1,19 @@
+/* styles.css */
+/* Estilização do formulário */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+/* Estilização do grupo de entrada */
+.input-group {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px auto;
+}
+
+/* Estilização das entradas de texto */
+.input-group input {
+  flex: 1;
+  margin-right: 10px;
+}

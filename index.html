@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Upload Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      .image-upload {
+        margin: 20px auto;
+      }
+      .image-upload label {
+        display: block;
+        cursor: pointer;
+      }
+      .image-upload img {
+        width: 150px;
+        height: 150px;
+        border: 2px solid #ccc;
+        object-fit: cover;
+      }
+      #file-input {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="myForm">
+      <div class="image-upload">
+        <label for="file-input">
+          <img
+            src="https://via.placeholder.com/150"
+            id="preview"
+            alt="Upload Foto"
+          />
+        </label>
+        <input id="file-input" type="file" onchange="previewImage()" />
+      </div>
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="senha" placeholder="Senha" required />
+      <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+      function previewImage() {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          document.getElementById('preview').src = e.target.result;
+        };
+        reader.readAsDataURL(document.getElementById('file-input').files[0]);
+      }
+    </script>
+  </body>
+</html>
